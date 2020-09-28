@@ -37,22 +37,22 @@ Note: No blank spaces in formulas!
 Set cell A1 with: 2, set cell A2 with 3.5
 Do in some other cell:
 
-=4/2 -> expect: 2           =A2*2 -> expect: 7       =3+B1 -> expect: alert message!
-=2.5-5 -> expect: -2.5      =A1*A2 -> expect: 7      =4/sh -> expect: alert message!           
+=4/2 -> expect: 2           =A2*2 -> expect: 7       =3+B1 -> expect: error message!
+=2.5-5 -> expect: -2.5      =A1*A2 -> expect: 7      =4/sh -> expect: error message!           
 ```
 **SUM Operation**
 ```
 Set cells A1,A2,A3 with: 2
 Do in some other cell:
 
-=SUM(A1,A2,A3) -> expect: 6      set B2 with: =SUM(B2,4) -> expect: alert message!
-=SUM(A1:A3) -> expect: 6        =SUM(A1,4,r) -> expect: alert message!
+=SUM(A1,A2,A3) -> expect: 6      set B2 with: =SUM(B2,4) -> expect: error message!
+=SUM(A1:A3) -> expect: 6        =SUM(A1,4,r) -> expect: error message!
 ```
 **AVG Operation**
 ```
 Set cells A1,A2,A3 with: 2
 Do in some other cell:
 
-=AVG(A1,,A2) -> expect: alert message!      =AVG(A1:A3) -> expect: 2
-=AVG(a1,A2,A3) -> expect: alert message!    =AVG(A1,A2,-2) -> expect: 1
+=AVG(A1,,A2) -> expect: error message!      =AVG(A1:A3) -> expect: 2
+=AVG(a1,A2,A3) -> expect: error message!    =AVG(A1,A2,-2) -> expect: 1
 ```
